@@ -24,34 +24,34 @@ class TodoItem extends Component {
     const {todoDetails, deleteTodo, toggleComplete} = this.props
     const {editing, updatedTitle} = this.state
     return (
-       <li
+      <li
         className={todoDetails.completed ? 'todo-item completed' : 'todo-item'}
-       >
+      >
         {editing ? (
-            <>
-             <input
-              type="text"
+          <>
+            <input
+              type='text'
               value={updatedTitle}
               onChange={this.handleChange}
-             />
-            </>
-        ) : (
-           <>
-            <input
-             type="checkbox"
-             checked={todoDetails.completed}
-             onChange={() => toggleComplete(todoDetails.id)}
             />
-            <p className="title">{todoDetails.title}</p>
-            <button onClick={this.handleEdit} type="button">
-             Edit
-            </button> 
-            <button onClick={() => deleteTodo(todoDetails.id)} type="button">
-             Delete
+          </>
+        ) : (
+          <>
+            <input
+              type='checkbox'
+              checked={todoDetails.completed}
+              onChange={() => toggleComplete(todoDetails.id)}
+            />
+            <p className='title'>{todoDetails.title}</p>
+            <button onClick={this.handleEdit} type='button'>
+              Edit
             </button>
-           </>   
+            <button onClick={() => deleteTodo(todoDetails.id)} type='button'>
+              Delete
+            </button>
+          </>
         )}
-       </li>  
+      </li>
     )
   }
 }
